@@ -1,33 +1,35 @@
 function calcularTarifa(tipoVehiculo, hora, esFeriado) {
 
-    tipoVehiculo = tipoVehiculo.toLowerCase();
+    const tipo = tipoVehiculo.toLowerCase(); // 📌 Usamos const para evitar mutar el parámetro
 
     let tarifa = 0;
 
-    if (tipoVehiculo === "moto") {
+    if (tipo === "moto") {
         tarifa = 150;
-    } else if (tipoVehiculo === "auto") {
+    } else if (tipo === "auto") {
         tarifa = 300;
-    } else if (tipoVehiculo === "camion") {
+    } else if (tipo === "camion") {
         tarifa = 600;
     } else {
         console.log("Vehículo no válido");
         return 0;
     }
 
-    if ((hora >= 8 && hora <= 10 || hora >= 17 && hora <= 19) && esFeriado === false) {
+    if ((hora >= 8 && hora <= 10 || hora >= 17 && hora <= 19) && !esFeriado) {
         tarifa = tarifa * 1.30;
     }
 
     return tarifa;
 }
 
+// 📌 Feedback Docente (Profesor Axel):
+// Impecable resolución del desafío semanal integrador, Santiago. La lógica condicional de hora pico, la normalización con .toLowerCase() y la simulación aleatoria con Math.random() y Template Literals están resueltas en nivel excelente.
 
 function simularFilaCabina(cantidadVehiculos) {
 
     let total = 0;
 
-    let vehiculos = ["moto", "auto", "camion"];
+    const vehiculos = ["moto", "auto", "camion"];
 
     for (let i = 1; i <= cantidadVehiculos; i++) {
 
@@ -49,3 +51,5 @@ function simularFilaCabina(cantidadVehiculos) {
 
     return total;
 }
+
+console.log("Total recabado en fila:", simularFilaCabina(5));
