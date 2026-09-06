@@ -1,3 +1,11 @@
+// ==============================================================================
+// Ejercicio 9: Estadísticas de Descarga de Archivos
+// Consigna: Escribir una función llamada `calcularEstadisticasDescarga` que reciba
+// la cantidad de archivos a descargar y el tamaño promedio en MB de cada uno.
+// Debe convertir los datos a Number, calcular el peso total en KB (1 MB = 1024 KB)
+// y retornar un mensaje formateado con template string.
+// ==============================================================================
+
 function calcularEstadisticasDescarga(cantArchivos, tamanoPromedioMB) {
     cantArchivos = Number(cantArchivos);
     tamanoPromedioMB = Number(tamanoPromedioMB);
@@ -9,3 +17,9 @@ function calcularEstadisticasDescarga(cantArchivos, tamanoPromedioMB) {
 }
 
 console.log(calcularEstadisticasDescarga("10", "1.5"));
+
+// 📌 Feedback Docente (Profesor Axel):
+// ¡Muy bien resuelto, Santiago! Excelente el parseo explícito a Number y el uso de Template Literals.
+
+
+console.log(calcularEstadisticasDescarga(5, 2));
